@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import ih.imgproc
+import lib.imgproc
 
 parser = argparse.ArgumentParser(description = "Thresholds an image based on windows.")
 parser.add_argument("--input", dest="input", help="Path to input image.", required = True)
