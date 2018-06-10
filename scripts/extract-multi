@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import ih.imgproc
+from lib import imgproc
 import os
 import sqlite3
 import shutil
@@ -38,7 +38,7 @@ try:
     for i,input in enumerate(args.inputs):
     	try:
             dbid = "_".join(os.path.basename(input).split("_")[:-1])
-            plant = ih.imgproc.Image(input, ".", db = args.db, dbid = dbid)
+            plant = imgproc.Image(input, ".", db = args.db, dbid = dbid)
 
             plant.extractFinalPath()
 
