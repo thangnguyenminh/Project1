@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import lib.imgproc
+from lib import imgproc
 
 parser = argparse.ArgumentParser(description = "Converts an image between color spectrums.")
 parser.add_argument("--input1", dest="input1", help="Path to first input image.", required = True)
@@ -13,7 +13,7 @@ parser.add_argument("--writeblank", default=False, action="store_true", help="If
 args = parser.parse_args()
 
 try:
-    plant = lib.imgproc.Image(args.input1, args.outputdir, args.output, False)
+    plant = imgproc.Image(args.input1, args.outputdir, args.output, False)
     if args.mask:
     	plant.mask()
     plant.bitwise_and(args.input2)
