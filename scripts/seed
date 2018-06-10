@@ -1,6 +1,6 @@
 #!python
 import cv2
-import ih.imgproc
+from lib import imgproc
 import argparse
 import os
 
@@ -18,7 +18,7 @@ parser.add_argument("--writesteps", dest="writesteps", default = False, action =
 args = parser.parse_args()
 
 prefix = os.path.basename(args.input).split(".")[0]
-seed = ih.imgproc.Image(args.input)
+seed = imgproc.Image(args.input)
 
 if args.roi:
   seed.crop(args.roi, resize = True)
