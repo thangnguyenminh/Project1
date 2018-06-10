@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import ih.imgproc
+from lib import imgproc
 
 parser = argparse.ArgumentParser(description = "Stretches a grayscale image to the full 0-255 intensity range.")
 parser.add_argument("--input", dest="input", help="Path to input image.", required = True)
@@ -11,7 +11,7 @@ parser.add_argument("--writeblank", default=False, action="store_true", help="If
 args = parser.parse_args()
 
 try:
-    plant = ih.imgproc.Image(args.input, args.outputdir, args.output, False)
+    plant = imgproc.Image(args.input, args.outputdir, args.output, False)
     plant.equalizeHist()
     plant.write()
 except Exception as e:
