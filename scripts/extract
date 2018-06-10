@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import ih.imgproc
+from lib import imgproc
 import os
 import sqlite3
 
@@ -21,7 +21,7 @@ parser.add_argument("--circle", dest="circle", default=False, action="store_true
 args = parser.parse_args()
 
 try:
-    plant = ih.imgproc.Image(args.input, ".", db = args.db, dbid = args.dbid)
+    plant = imgproc.Image(args.input, ".", db = args.db, dbid = args.dbid)
 
     plant.extractFinalPath()
 
