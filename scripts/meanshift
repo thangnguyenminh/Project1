@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import ih.imgproc
+from lib import imgproc
 
 parser = argparse.ArgumentParser(description = "Shifts colors in an image based on nearest neighbors.")
 parser.add_argument("--input", dest="input", help="Path to input image.", required = True)
