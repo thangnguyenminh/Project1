@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import lib.imgproc
+from lib import imgproc
 
 parser = argparse.ArgumentParser(description = "Blends two images based on the provided weights.")
 parser.add_argument("--input1", dest="input1", help="Path to first input image.", required = True)
@@ -14,7 +14,7 @@ parser.add_argument("--writeblank", default=False, action="store_true", help="If
 args = parser.parse_args()
 
 try:
-    plant = lib.imgproc.Image(args.input1, args.outputdir, args.output, False)
+    plant = imgproc.Image(args.input1, args.outputdir, args.output, False)
     plant.addWeighted(args.input2, args.weight1, args.weight2)
     plant.write()
 except Exception as e:
