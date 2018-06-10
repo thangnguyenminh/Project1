@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import ih.imgproc
+from lib import imgproc
 
 parser = argparse.ArgumentParser(description = "Removes contours from an image based on size.")
 parser.add_argument("--input", dest="input", help="Path to input image.", required = True)
@@ -13,7 +13,7 @@ parser.add_argument("--writeblank", default=False, action="store_true", help="If
 args = parser.parse_args()
 
 try:
-    plant = ih.imgproc.Image(args.input, args.outputdir, args.output, False)
+    plant = imgproc.Image(args.input, args.outputdir, args.output, False)
     plant.contourChop(args.binary, args.basemin)
     plant.write()
 except Exception as e:
