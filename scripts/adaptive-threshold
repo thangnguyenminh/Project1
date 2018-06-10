@@ -1,7 +1,7 @@
 #!python
 import argparse
 import traceback
-import lib.imgproc
+from lib import imgproc
 
 parser = argparse.ArgumentParser(description = "Thresholds an image based on windows.")
 parser.add_argument("--input", dest="input", help="Path to input image.", required = True)
@@ -16,7 +16,7 @@ parser.add_argument("--writeblank", default=False, action="store_true", help="If
 args = parser.parse_args()
 
 try:
-    plant = ih.imgproc.Image(args.input, args.outputdir, args.output, False)
+    plant = imgproc.Image(args.input, args.outputdir, args.output, False)
     plant.adaptiveThreshold(args.value, args.adaptiveType, args.thresholdType, args.blockSize, args.C)
     plant.write()
 except Exception as e:
