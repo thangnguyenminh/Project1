@@ -4,14 +4,14 @@ Created on Tue May 15 19:01:55 2018
 
 @author: Admin
 """
-import imgproc
-from memory_profiler import profile
+from lib import imgproc
+#from memory_profiler import profile
 import matplotlib.pyplot as plt
 import csv
 import numpy as np
 #@profile
 def computer_RGB_SV(vis_image,idx):
-    #vis_image = 'D:/Users/Admin/Downloads/testSet/strain1/0184 Uni Nebraska Rice 1_023538-S_2013-09-08_05-16-05_460864'
+    
     plant = imgproc.Image(vis_image)
     
     base = plant.save("base")
