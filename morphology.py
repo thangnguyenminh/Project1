@@ -10,7 +10,6 @@ Created on Tue Apr 10 21:43:56 2018
 #
 # Fredrik Jansson, Pirom Konglerd, Catherine Reeb 2014-2017
 # Released under the GNU General Public License v3.0.
-# https://github.com/fjansson/MorphoSnake
 #
 # written for Python3
 
@@ -25,7 +24,7 @@ import json
 import sys
 import os.path
 import pickle
-from memory_profiler import profile
+#from memory_profiler import profile
 
 # list of all keys measuring lengths - these are scaled with px_mm
 length_keys = ['dia', 'branchlength', 'branchlength_e', 'W_mean', 'W_max', 'W_min', 'W_std', 'apicaldist']
