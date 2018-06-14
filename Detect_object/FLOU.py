@@ -5,7 +5,7 @@ Created on Mon Apr 16 10:12:03 2018
 @author: Admin
 """
 import matplotlib.pyplot as plt
-import ih.imgproc
+from lib import imgproc
 import cv2
 import numpy as np
 
