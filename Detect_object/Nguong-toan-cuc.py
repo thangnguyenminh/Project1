@@ -9,9 +9,9 @@ import gc
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-from memory_profiler import profile
+#from memory_profiler import profile
 
-@profile
+#@profile
 def histogram(img):
     w = img.shape[0]
     h = img.shape[1]
